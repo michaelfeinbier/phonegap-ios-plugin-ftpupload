@@ -7,7 +7,7 @@
  
 /* Get local ref to global PhoneGap/Cordova/cordova object for exec function.
 - This increases the compatibility of the plugin. */
-var cordovaRef = window.PhoneGap || window.Cordova || window.cordova; // old to new fallbacks
+var cordovaRef = window.PhoneGap || window.cordova; // old to new fallbacks
 
 function FtpUpload() {
     this.resultCallback = null; // Function
@@ -30,15 +30,14 @@ FtpUpload.prototype.sendFile = function(successCallback, failCallback, address, 
 
 
 cordovaRef.addConstructor(function() {
-                       if(!window.plugins) {
-                          window.plugins = {};
-                       }
-                       
-                       // shim to work in 1.5 and 1.6
-                       if (!window.Cordova) {
-                          window.Cordova = cordova;
-                       };
-                       
-                       window.plugins.ftpUpload = new FtpUpload();
-                          
+    if(!window.plugins) {
+      window.plugins = {};
+    }
+
+    // shim to work in 1.5 and 1.6
+    if (!window.Cordova) {
+      window.Cordova = cordova;
+    };
+
+    window.plugins.ftpUpload = new FtpUpload();
 });
