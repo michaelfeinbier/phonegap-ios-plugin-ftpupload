@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.github.gokce.phonegap-ios-plugin-ftpupload"
+    id="net.feinbier.phonegap.phonegap-ios-plugin-ftpupload"
     version="0.0.1">
     <name>FtpUpload</name>
     <description>Phonegap FtpUpload Plugin</description>
